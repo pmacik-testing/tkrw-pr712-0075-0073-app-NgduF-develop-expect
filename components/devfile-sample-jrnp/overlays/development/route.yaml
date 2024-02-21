@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: devfile-sample-jrnp
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: devfile-sample-jrnp
+    app.kubernetes.io/part-of: tkrw-pr712-0075-0073-app
+  name: devfile-sample-jrnp8mnt
+spec:
+  path: /
+  port:
+    targetPort: 3001
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: devfile-sample-jrnp
+    weight: null
+status: {}
